@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+  <h3>Fate/Grand Order抽卡模拟：贞德(Alter) Pickup召唤！</h3>
+  <hr>
+  <div class="container">
+    
+    <img src="res/summoning.jpg" class="img-thumbnail">
+    <p></p>
+    <div class="row">
+      <div class="col-md-2 col-md-offset-1">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getOne(1);">召唤1次</a>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
+      </div>
+    </div>
+  
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <img id="r_1" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_2" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_3" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_4" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_5" class="img-thumbnail">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-2">
+        <img id="r_6" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_7" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_8" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_9" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_10" class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="simu.js"></script>
+  </body>
+</html>
