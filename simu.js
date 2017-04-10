@@ -116,3 +116,8 @@ function getTen(){
         getOne(c,rand);
     }
 }
+function clearResult(){
+    for(var i=1;i<=10;i++){
+        $("#r_"+i).attr("src","");
+    }
+}
