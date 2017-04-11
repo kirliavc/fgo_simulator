@@ -2,7 +2,7 @@ var log=new Array(11);
 var times=0;
 var alter=0;
 //0:4serv,1:3serv,2:4craft,3:3craft
-var serv5=new Array("002","008","037","052","059","060","062","065","075","076","097");
+var serv5=new Array("002","008","037","052","059","060","062","065","075","076","084","085","097"); //add 084,085 迦尔纳、阿周那
 var craft5=new Array("031","032","033","034","035","048","057","058","067","075","097","175");
 var serv4=new Array("006","010","011","014","018","029","030","041","046","047","048","058","066","074","082","087","089","094","100","101");
 var serv3=new Array("007","009","013","015","017","020","022","023","026","027","028","031","035","042","049","055","056","063","064","071","072","079","080","081","095","104","105");
@@ -24,7 +24,6 @@ function getOne(i,j){
     if(rand<0.01){ //5,servant
         log[i]=0;
         if(rand<0.0065){    //up
-            alter++;
             imgurl="http://file.fgowiki.591mogu.com/fgo/head/106.jpg";
             $("#r_"+i).attr("src",imgurl);
             $("#serv5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
@@ -98,6 +97,7 @@ function getOne(i,j){
         }
     }
     //3,craft
+    log[i]=3;
     var bias=(1-0.6)/craft3.length;
     for(var r=0;r<craft3.length;r=r+1){     //not up
         if(rand>=0.6+r*bias&&rand<0.6+(r+1)*bias){
@@ -111,27 +111,32 @@ function getTen(){
     log=new Array(11);
     for(var i=1;i<=10;i++)
         getOne(i,0);
-    var pro=1,mini=5;   //pro: golden card, mini:servant
-    for(var i=1;i<=10;i++){
-        if(log[i]%2==0)
-            pro=2;
-        mini=Math.min(mini,log[i]);
+    var no_gold=true,no_servant=true;   //pro: golden card, mini:servant
+    for(var i of log){
+        if(i%2==0)
+            no_gold=false;
     }
-    if(pro==1){     //no golden card,randomly pick a silver card
-        var c=parseInt(Math.random()*10+1);
-        getOne(c,Math.random()*0.2);
+    if(no_gold){     //no golden card,randomly pick a silver card, change to a gold card
+        var pick=parseInt(Math.random()*10+1);
+        getOne(pick,Math.random()*0.2);
     }
-    if(mini>=2){
-        var c=parseInt(Math.random()*10+1);
+    for(var i of log){  //check if no servant is summoned.
+        if(i<2)
+            no_servant=false;
+    }
+    if(no_servant){
+        var pick=parseInt(Math.random()*10+1);
         var cnt=0;
-        while(log[c]%2==0&&cnt<10){     //no servant, randomly pick a silver card
-            c=parseInt(Math.random()*10+1);
+        while(log[pick]%2==0&&cnt<30){     //no servant, randomly pick a silver card
+            pick=parseInt(Math.random()*10+1);
             cnt+=1;
         }
         var rand=Math.random()*0.44;
-        if(rand>0.01)rand=rand+0.04;
-        if(rand>0.04)rand+=0.12;
-        getOne(c,rand);
+        if(rand>0.01&&rand<=0.04)   //(0.01,0.04] -> (0.05,0.08]
+            rand=rand+0.04;
+        else if(rand>0.04)      //(0.04,0.44) -> (0.2,0.6)
+            rand+=0.16;
+        getOne(pick,rand);
     }
 }
 function clearResult(){
