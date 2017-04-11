@@ -1,4 +1,6 @@
 var log=new Array(11);
+var times=0;
+var alter=0;
 //0:4serv,1:3serv,2:4craft,3:3craft
 var serv5=new Array("002","008","037","052","059","060","062","065","075","076","097");
 var craft5=new Array("031","032","033","034","035","048","057","058","067","075","097","175");
@@ -9,14 +11,20 @@ var upcraft4=new Array("182","183","184");
 var craft3=new Array("037","042","046","055","065","072","089","090","091","092","093","094","095","096");
 
 function getOne(i,j){
+    
     var rand;
-    if(j==0)
+    if(j==0){
+        times=times+1;
+        $("#times").text(times);
         rand=Math.random();
+    }
+        
     else
         rand=j;
     if(rand<0.01){ //5,servant
         log[i]=0;
         if(rand<0.0065){    //up
+            alter++;
             $("#r_"+i).attr("src","http://file.fgowiki.591mogu.com/fgo/head/106.jpg");
             return;
         }
@@ -98,7 +106,6 @@ function getTen(){
             pro=2;
         mini=Math.min(mini,log[i]);
     }
-    console.log(pro);
     if(pro==1){
         var c=parseInt(Math.random()*10+1);
         getOne(c,Math.random()*0.2);
