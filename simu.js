@@ -2,7 +2,7 @@ var log=new Array(11);
 var times=0;
 var alter=0;
 //0:4serv,1:3serv,2:4craft,3:3craft
-var serv5=new Array("002","008","037","052","059","060","062","065","075","076","084","085","097"); //add 084,085 迦尔纳、阿周那
+var serv5=new Array("002","008","037","052","059","060","062","065","075","076","084","085","097");
 var craft5=new Array("031","032","033","034","035","048","057","058","067","075","097","175");
 var serv4=new Array("006","010","011","014","018","029","030","041","046","047","048","058","066","074","082","087","089","094","100","101");
 var serv3=new Array("007","009","013","015","017","020","022","023","026","027","028","031","035","042","049","055","056","063","064","071","072","079","080","081","095","104","105");
@@ -127,9 +127,15 @@ function getTen(){
     if(no_servant){
         var pick=parseInt(Math.random()*10+1);
         var cnt=0;
-        while(log[pick]%2==0&&cnt<30){     //no servant, randomly pick a silver card
+        while(log[pick]%2==0&&cnt<10){     //no servant, randomly pick a silver card
             pick=parseInt(Math.random()*10+1);
             cnt+=1;
+        }
+        if(cnt==10){
+            for(var i=1;i<=10;i++){
+                if(log[i]==3)
+                    pick=i;
+            }
         }
         var rand=Math.random()*0.44;
         if(rand>0.01&&rand<=0.04)   //(0.01,0.04] -> (0.05,0.08]
