@@ -1,1 +1,115 @@
-出现bug，暂停服务，等待更新。
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Fate/Grand Order：贞德(Alter) Pickup召唤！</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+  <h3>Fate/Grand Order：贞德(Alter) Pickup召唤！</h3>
+  <hr>
+  
+  <div class="container">
+    
+    <img src="http://vignette2.wikia.nocookie.net/fategrandorder/images/1/12/Jeanne_Alter_Campaign.jpg/revision/latest/scale-to-width-down/600?cb=20160411102114" class="img-thumbnail" >
+    <p></p>
+    <div class="row">
+      <div class="col-md-1 col-md-offset-1">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="clearResult();getOne(1,0);">召唤1次</a>
+      </div>
+      <div class="col-md-1 col-md-offset-1">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
+      </div>
+      <div class="col-md-2 col-md-offset-1">
+      <h4></h4>
+      </div>
+    </div>
+      
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <img id="r_1" class="img-thumbnail">
+      </div>
+      <div class="col-md-2">
+        <img id="r_2" class="img-thumbnail">
+      </div>
+      <div class="col-md-2">
+        <img id="r_3" class="img-thumbnail">
+      </div>
+      <div class="col-md-2">
+        <img id="r_4" class="img-thumbnail">
+      </div>
+      <div class="col-md-2">
+        <img id="r_5" class="img-thumbnail">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-2">
+        <img id="r_6" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_7" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_8" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_9" class="img-thumbnail">
+      </div>
+      <div class="col-md-2 ">
+        <img id="r_10" class="img-thumbnail">
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-success" role="alert">
+  <h4>召唤结果<small><span>    总召唤次数：</span><span id="times">0</span></small></h4>
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆5(SSR)从者</div>
+      <div class="panel-body" id="serv5">
+      
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆4(SR)从者</div>
+      <div class="panel-body" id="serv4">
+      
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆5(SSR)概念礼装</div>
+      <div class="panel-body" id="craft5">
+      
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆4(SR)概念礼装</div>
+      <div class="panel-body" id="craft4">
+      
+      </div>
+  </div>
+  </div>
+    <p align="center"><a href="https://konatasick.github.io/test_simulator/" target="_blank">FGO夏日推荐召唤1期模拟器更新中</a></p>
+  <p align="center">作者：<a href="https://github.com/kirliavc/test_simulator" target="_blank">kirliavc@github</a>，欢迎提出issue/反馈建议。喜欢的可以点个star哦~</p>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="simu.js"></script>
+  </body>
+</html>
