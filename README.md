@@ -8,7 +8,7 @@ Fate/Grand Order: Jeanne d'Arc (Alter) Pick Up Summon Simulator
  
  需要考虑不同卡池的诸多差异，例如剧情池限定从者、随剧情加入卡池的从者与礼装、随剧情退出卡池的三星礼装等。
  
- 可以用我的代码自己修改，向我发送pull request，也可以整理好卡牌序号后发布到NGA或提出issue。
+ 可以用我的代码自己修改，向我发送pull request，也可以整理好卡牌序号后发布到[NGA](http://bbs.ngacn.cc/read.php?tid=11380566)或提出issue。
 * 格式如下：
 ```javascript
   /*
