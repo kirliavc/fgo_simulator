@@ -20,3 +20,4 @@ Fate/Grand Order: Jeanne d'Arc (Alter) Pick Up Summon Simulator
   */
   var upcraft4=new Array("182","183","184");
 ```
+ FGO大型战斗模拟器绝赞脑洞中，欢迎大家提供脑洞
