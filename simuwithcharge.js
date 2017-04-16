@@ -146,7 +146,7 @@ function getTen(){
             no_gold=false;
     }
     if(no_gold){     //no golden card,randomly pick a silver card, change to a gold card
-        var pick=parseInt(Math.random()*10+1);
+        var pick=Math.floor(Math.random()*10+1);
         getOne(pick,Math.random()*0.2);
     }
     for(var i of log){  //check if no servant is summoned.
@@ -154,10 +154,10 @@ function getTen(){
             no_servant=false;
     }
     if(no_servant){
-        var pick=parseInt(Math.random()*10+1);
+        var pick=Math.floor(Math.random()*10+1);
         var cnt=0;
         while(log[pick]%2==0&&cnt<10){     //no servant, randomly pick a silver card
-            pick=parseInt(Math.random()*10+1);
+            pick=Math.floor(Math.random()*10+1);
             cnt+=1;
         }
         if(cnt==10){
