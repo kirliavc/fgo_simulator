@@ -45,16 +45,17 @@ function getOne(i,j){
     else
         rand=j;
     if(rand<0.01){ //5,servant
+        var serv5uprate=0.006;
         log[i]=0;
-        if(rand<0.0065){    //up
+        if(rand<serv5uprate){    //up
             imgurl="http://file.fgowiki.591mogu.com/fgo/head/106.jpg";
             $("#r_"+i).attr("src",imgurl);
             $("#serv5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
             return;
         }
-        var bias=(0.01-0.0065)/serv5.length;
+        var bias=(0.01-serv5uprate)/serv5.length;
         for(var r=0;r<serv5.length;r=r+1){  //not up
-            if(rand>=0.0065+r*bias&&rand<0.0065+(r+1)*bias){
+            if(rand>=serv5uprate+r*bias&&rand<serv5uprate+(r+1)*bias){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+serv5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
                 $("#serv5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
