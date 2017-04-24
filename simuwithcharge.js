@@ -142,16 +142,16 @@ function getTen(){
     for(var i=1;i<=10;i++)
         getOne(i,0);
     var no_gold=true,no_servant=true;   //pro: golden card, mini:servant
-    for(var i of log){
-        if(i%2==0)
+    for(var i=1;i<=10;i++){
+        if(log[i]%2==0)
             no_gold=false;
     }
     if(no_gold){     //no golden card,randomly pick a silver card, change to a gold card
         var pick=Math.floor(Math.random()*10+1);
         getOne(pick,Math.random()*0.2);
     }
-    for(var i of log){  //check if no servant is summoned.
-        if(i<2)
+    for(var i=1;i<=10;i++){  //check if no servant is summoned.
+        if(log[i]<2)
             no_servant=false;
     }
     if(no_servant){
