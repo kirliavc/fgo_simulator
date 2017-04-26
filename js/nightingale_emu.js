@@ -7,6 +7,7 @@ function buyQuartz(){
     if($("#auto_buy").is(':checked')){
         quartz+=140;
         money+=518;
+        $("#money").text(money);
         return true;
     }
         
