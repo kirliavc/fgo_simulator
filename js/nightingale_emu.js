@@ -45,14 +45,14 @@ function getOne(i,j){
     else
         rand=j;
     if(rand<0.01){ //5,servant
-        var serv5uprate=0.006;
+        var serv5uprate=0.0065;
         log[i]=0;
         var bias=serv5uprate/upserv5.length;
         if(rand<serv5uprate){    //up
             for(var r=0;r<upserv5.length;r=r+1){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+upserv5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#serv5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#serv5").prepend("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
             }
             return;
         }
@@ -61,7 +61,7 @@ function getOne(i,j){
             if(rand>=serv5uprate+r*bias&&rand<serv5uprate+(r+1)*bias){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+serv5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#serv5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#serv5").prepend("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
             }
         }
@@ -73,7 +73,7 @@ function getOne(i,j){
             if(rand>=0.01+r*bias&&rand<0.01+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+craft5[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#craft5").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#craft5").prepend("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
             }
         }
@@ -85,7 +85,7 @@ function getOne(i,j){
             if(rand>=0.05+r*bias&&rand<0.05+(r+1)*bias){
                 imgurl="http://file.fgowiki.591mogu.com/fgo/head/"+serv4[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#serv4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#serv4").prepend("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
             }
         }
@@ -97,7 +97,7 @@ function getOne(i,j){
             if(rand>=0.08+r*bias&&rand<0.08+(r+1)*bias){
                 imgurl="http://fgowiki.com/fgo/equip/"+craft4[r]+".jpg";
                 $("#r_"+i).attr("src",imgurl);
-                $("#craft4").append("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
+                $("#craft4").prepend("<img class=\"img-thumbnail\" src=\""+imgurl+"\"></img> ");
                 return;
             }
         }
