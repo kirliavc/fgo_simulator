@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -5,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Fate/Grand Order：贞德(Alter) Pickup召唤！</title>
+    <title>Fate/Grand Order：合众为一推荐召唤3 - 卡池模拟器</title>
 
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
@@ -17,66 +18,72 @@
     <![endif]-->
   </head>
   <body>
-
+    
     <!-- Main jumbotron for a primary marketing message or call to action -->
-  <h3>Fate/Grand Order：贞德(Alter) Pickup召唤！</h3>
+  <h3 align="center">Fate/Grand Order：合众为一推荐召唤3 - 卡池模拟器</h3>
   <hr>
   
-  <div class="container">
+  <div class="container" align="center">
     
-    <img src="http://kazemai.github.io/fgo-vz/common/images/2016/04/summon_20160411_igmzga.jpg" class="img-thumbnail" height="232" width="640"/><br>
+    <img src="http://i0.hdslb.com/bfs/game/8aeee21a0e97869eac9d7c0481a938f35819591f.jpg" class="img-thumbnail" height="232" width="640"/>
+    <p></p>
     <div class="row">
-      <div class="col-md-1 col-md-offset-1">
-        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="clearResult();getOne(1,0);">召唤1次</a>
+      <div class="col-md-3 col-md-offset-2 col-xs-6">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="clearResult();getOne(1,-1);">召唤1次</a>
       </div>
-      <div class="col-md-1 col-md-offset-1">
+      <div class="col-md-2 col-xs-6">
         <a class="btn btn-primary btn-lg" href="javascript:void(0)" role="button" onclick="getTen();">召唤10次</a>
       </div>
-      <div class="col-md-2 col-md-offset-1">
-      <h4></h4>
+      <div class="col-md-1 col-xs-2 col-xs-offset-6 col-md-offset-0">
+      <img src="http://img1.ali213.net/webgamepic/uploadfile/news/2015/06/29/ali20150629130520_49018_600.jpg" height="45" width="45"/>
       </div>
+      <div class="col-md-2 col-xs-4">
+      <span align="left"><font size="6"><p id="quartz">140</p></font>
+      <input type="checkbox" id="auto_buy">自动购买圣晶石</input></span>
+      </div>
+      
     </div>
       
   </div>
   <div class="container">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 col-md-offset-1 col-xs-4 col-xs-offset-0">
         <img id="r_1" class="img-thumbnail">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0">
         <img id="r_2" class="img-thumbnail">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0">
         <img id="r_3" class="img-thumbnail">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0">
         <img id="r_4" class="img-thumbnail">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0">
         <img id="r_5" class="img-thumbnail">
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2 col-md-offset-1 col-xs-4 col-xs-offset-0">
         <img id="r_6" class="img-thumbnail">
       </div>
-      <div class="col-md-2 ">
+      <div class="col-md-2  col-xs-4 col-xs-offset-0">
         <img id="r_7" class="img-thumbnail">
       </div>
-      <div class="col-md-2 ">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
         <img id="r_8" class="img-thumbnail">
       </div>
-      <div class="col-md-2 ">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
         <img id="r_9" class="img-thumbnail">
       </div>
-      <div class="col-md-2 ">
+      <div class="col-md-2 col-xs-4 col-xs-offset-0 ">
         <img id="r_10" class="img-thumbnail">
       </div>
     </div>
   </div>
   <div class="alert alert-success" role="alert">
-  <h4>召唤结果<small><span>    总召唤次数：</span><span id="times">0</span></small></h4>
+  <h4>召唤结果<small><span>    总召唤次数：</span><span id="times">0</span><span>  消费金额：</span><span id="money">0</span><span>元</span></small></h4>
   <br>
   <div class="panel panel-default">
     <div class="panel-heading">☆5(SSR)从者</div>
@@ -103,13 +110,14 @@
       </div>
   </div>
   </div>
-    <p align="center"><a href="https://konatasick.github.io/test_simulator/" target="_blank">FGO夏日推荐召唤1期、2期模拟器发布</a> | 
-      <a href="withcharge.html" target="_blank">消费模式更新，欢迎体验</a></p>
+    <p align="center"><a href="https://kirliavc.github.io/test_simulator/old_summon" target="_blank">往期卡池模拟器</a></p>
   <p align="center">作者：<a href="https://github.com/kirliavc/test_simulator" target="_blank">kirliavc@github</a>，欢迎提出issue/反馈建议。喜欢的可以点个star哦~</p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/simu.js"></script>
+    <script src="js/nightingale_pool.js"></script>
+    <script src="js/nightingale_emu.js"></script>
+    
   </body>
 </html>
