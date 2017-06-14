@@ -2,6 +2,7 @@ var log=new Array(11);
 var times=0;
 var quartz=140;
 var money=0;
+var no_5star=0;
 //0:4serv,1:3serv,2:4craft,3:3craft
 function buyQuartz(){
     if($("#auto_buy").is(':checked')){
@@ -45,6 +46,7 @@ function getOne(i,j){
     else
         rand=j;
     if(rand<0.01){ //5,servant
+        no_5star=0;
         var serv5uprate=0.0065;
         log[i]=0;
         var bias=serv5uprate/upserv5.length;
@@ -66,6 +68,7 @@ function getOne(i,j){
             }
         }
     }
+    no_5star+=1;
     if(rand<0.05){  //5,craft
         log[i]=2;
         var bias=(0.05-0.01)/craft5.length;
@@ -132,8 +135,17 @@ function getTen(){
     quartz-=30;
     $("#quartz").text(quartz);
     log=new Array(11);
-    for(var i=1;i<=10;i++)
-        getOne(i,0);
+    for(var i=1;i<=10;i++){
+        if(no_5star==119)
+        {
+            no_5star=0;
+            times++;
+            getOne(i,Math.random()*0.01);
+        }
+        else
+            getOne(i,0);
+    }
+        
     var no_gold=true,no_servant=true;   //pro: golden card, mini:servant
     for(var i=1;i<=10;i++){
         if(log[i]%2==0)
@@ -141,6 +153,7 @@ function getTen(){
     }
     if(no_gold){     //no golden card,randomly pick a silver card, change to a gold card
         var pick=Math.floor(Math.random()*10+1);
+        no_5star--;
         getOne(pick,Math.random()*0.2);
     }
     for(var i=1;i<=10;i++){  //check if no servant is summoned.
@@ -148,6 +161,7 @@ function getTen(){
             no_servant=false;
     }
     if(no_servant){
+        no_5star--;
         var pick=Math.floor(Math.random()*10+1);
         var cnt=0;
         while(log[pick]%2==0&&cnt<10){     //no servant, randomly pick a silver card
