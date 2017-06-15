@@ -38,7 +38,7 @@ function getOne(i,j){
         $("#quartz").text(quartz);
     }
     if(no_5star==119){
-        
+        times=times+1;
         rand=0.01*Math.random();
         no_5star=0;
     }
