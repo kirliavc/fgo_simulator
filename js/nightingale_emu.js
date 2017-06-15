@@ -37,7 +37,12 @@ function getOne(i,j){
         quartz-=3;
         $("#quartz").text(quartz);
     }
-    if(j==0||j==-1){
+    if(no_5star==119){
+        
+        rand=0.01*Math.random();
+        no_5star=0;
+    }
+    else if(j==0||j==-1){
         
         times=times+1;
         $("#times").text(times);
@@ -136,14 +141,7 @@ function getTen(){
     $("#quartz").text(quartz);
     log=new Array(11);
     for(var i=1;i<=10;i++){
-        if(no_5star==119)
-        {
-            no_5star=0;
-            times++;
-            getOne(i,Math.random()*0.01);
-        }
-        else
-            getOne(i,0);
+        getOne(i,0);
     }
         
     var no_gold=true,no_servant=true;   //pro: golden card, mini:servant
