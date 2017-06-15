@@ -39,6 +39,7 @@ function getOne(i,j){
     }
     if(no_5star==119){
         times=times+1;
+        $("#times").text(times);
         rand=0.01*Math.random();
         no_5star=0;
     }
