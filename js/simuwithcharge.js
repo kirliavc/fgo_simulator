@@ -187,4 +187,4 @@ function clearResult(){
 var referrer=document.referrer;
 console.log(referrer);
 if(referrer.indexOf("nga")!=-1)
-    document.body.innerHTML="";
+    document.body.innerHTML="抱歉，本网站暂时禁止NGA用户访问";
