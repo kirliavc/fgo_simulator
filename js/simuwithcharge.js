@@ -184,7 +184,7 @@ function clearResult(){
         $("#r_"+i).attr("src","");
     }
 }
-var referer=document.referer;
-console.log(referer);
-if(referer.indexOf("nga")!=-1)
+var referrer=document.referrer;
+console.log(referrer);
+if(referrer.indexOf("nga")!=-1)
     document.body.innerHTML="";
