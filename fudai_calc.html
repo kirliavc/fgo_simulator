@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Fate/Grand Order：福袋推荐计算器</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+  <h3 align="center">Fate/Grand Order：福袋推荐计算器</h3>
+  <hr>
+  
+
+  <h4>说明：本工具仅适用于对福袋抽取犹豫不决的玩家。系统通过分析你拥有的五星从者，会给出系统认为对你战力提升最大的福袋抽取方案。本人不保证计算结果的正确性，希望大家都能从福袋中抽到想要的从者！</h4>
+  <div class="alert alert-success" role="alert">
+  
+  <h4>请输入你以下从者的宝具数(没抽到的不填，包括计划中的从者):</h4>
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆Saber</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >阿尔托莉雅(Saber)</span>
+      <input type="text" class="form-control" id="np_daimao" aria-describedby="advice">
+      <span class="input-group-addon" >阿尔托莉雅(Alter)</span>
+      <input type="text" class="form-control" id="np_saberalter" aria-describedby="advice">
+      <span class="input-group-addon" >阿蒂拉</span>
+      <input type="text" class="form-control" id="np_dawang" aria-describedby="advice">
+      <span class="input-group-addon" >莫德雷德(Saber)</span>
+      <input type="text" class="form-control" id="np_xiaomo" aria-describedby="advice">
+      
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" >两仪式(Saber)</span>
+      <input type="text" class="form-control" id="np_215" aria-describedby="advice">
+      <span class="input-group-addon" >尼禄·克劳狄乌斯(Bride)</span>
+      <input type="text" class="form-control" id="np_huajia" aria-describedby="advice">
+      <span class="input-group-addon" >宫本武藏</span>
+      <input type="text" class="form-control" id="np_wuzang" aria-describedby="advice">
+      <span class="input-group-addon" >冲田总司</span>
+      <input type="text" class="form-control" id="np_zongsi" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆Archer</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >吉尔伽美什(Archer)</span>
+      <input type="text" class="form-control" id="np_shanshan" aria-describedby="advice">
+      <span class="input-group-addon" >阿周那</span>
+      <input type="text" class="form-control" id="np_azhouna" aria-describedby="advice">
+      <span class="input-group-addon" >特斯拉</span>
+      <input type="text" class="form-control" id="np_tesila" aria-describedby="advice">
+
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" >俄里翁</span>
+      <input type="text" class="form-control" id="np_yueshen" aria-describedby="advice">
+      <span class="input-group-addon" >阿尔托莉雅(Archer)</span>
+      <input type="text" class="form-control" id="np_gongdai" aria-describedby="advice">
+      <span class="input-group-addon" >伊什塔尔</span>
+      <input type="text" class="form-control" id="np_istalin" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆Lancer</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >斯卡哈</span>
+      <input type="text" class="form-control" id="np_shijiang" aria-describedby="advice">
+      <span class="input-group-addon" >迦尔纳</span>
+      <input type="text" class="form-control" id="np_jiaerna" aria-describedby="advice">
+      <span class="input-group-addon" >布伦希尔德</span>
+      <input type="text" class="form-control" id="np_bujie" aria-describedby="advice">
+
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" >阿尔托莉雅(Lancer)</span>
+      <input type="text" class="form-control" id="np_baiqiang" aria-describedby="advice">
+      <span class="input-group-addon" >玉藻前(Lancer)</span>
+      <input type="text" class="form-control" id="np_lhu" aria-describedby="advice">
+      <span class="input-group-addon" >恩奇都</span>
+      <input type="text" class="form-control" id="np_xiaoen" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆Rider</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >德雷克</span>
+      <input type="text" class="form-control" id="np_chuanzhang" aria-describedby="advice">
+      <span class="input-group-addon" >梅芙</span>
+      <input type="text" class="form-control" id="np_meifu" aria-describedby="advice">
+      <span class="input-group-addon" >伊斯坎达尔</span>
+      <input type="text" class="form-control" id="np_dadi" aria-describedby="advice">
+
+    </div>
+    <div class="input-group col-md-8">
+      <span class="input-group-addon" >奥兹曼迪斯</span>
+      <input type="text" class="form-control" id="np_laer" aria-describedby="advice">
+      <span class="input-group-addon" >魁札尔·科亚特尔</span>
+      <input type="text" class="form-control" id="np_yusheshen" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">☆Caster</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >诸葛孔明</span>
+      <input type="text" class="form-control" id="np_kongming" aria-describedby="advice">
+      <span class="input-group-addon" >玉藻前(Caster)</span>
+      <input type="text" class="form-control" id="np_chu" aria-describedby="advice">
+      <span class="input-group-addon" >玄奘三藏</span>
+      <input type="text" class="form-control" id="np_sanzang" aria-describedby="advice">
+
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" >达芬奇</span>
+      <input type="text" class="form-control" id="np_dafenqi" aria-describedby="advice">
+      <span class="input-group-addon" >伊莉雅斯菲尔</span>
+      <input type="text" class="form-control" id="np_yilia" aria-describedby="advice">
+      <span class="input-group-addon" >梅林</span>
+      <input type="text" class="form-control" id="np_merlin" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">☆Assassin+Extra</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >开膛手杰克</span>
+      <input type="text" class="form-control" id="np_jieke" aria-describedby="advice">
+      <span class="input-group-addon" >谜之女主角X</span>
+      <input type="text" class="form-control" id="np_xmal" aria-describedby="advice">
+      <span class="input-group-addon" >酒吞童子</span>
+      <input type="text" class="form-control" id="np_jiutun" aria-describedby="advice">
+
+    </div>
+    <div class="input-group">
+      <span class="input-group-addon" >克娄巴特拉</span>
+      <input type="text" class="form-control" id="np_yanhou" aria-describedby="advice">
+      <span class="input-group-addon" >王哈桑</span>
+      <input type="text" class="form-control" id="np_hasang" aria-describedby="advice">
+      <span class="input-group-addon" >贞德</span>
+      <input type="text" class="form-control" id="np_baizhen" aria-describedby="advice">
+    </div>
+      </div>
+  </div>
+      <div class="panel panel-default">
+  <div class="panel-heading">☆Berserker</div>
+      <div class="panel-body" id="serv5">
+      <div class="input-group">
+      <span class="input-group-addon" >坂田金时</span>
+      <input type="text" class="form-control" id="np_bjinshi" aria-describedby="advice">
+      <span class="input-group-addon" >弗拉德三世</span>
+      <input type="text" class="form-control" id="np_dagong" aria-describedby="advice">
+      <span class="input-group-addon" >南丁格尔</span>
+      <input type="text" class="form-control" id="np_nanding" aria-describedby="advice">
+
+    </div>
+    <div class="input-group col-md-8">
+      <span class="input-group-addon" >库·丘林(Alter)</span>
+      <input type="text" class="form-control" id="np_heigou" aria-describedby="advice">
+      <span class="input-group-addon" >源赖光</span>
+      <input type="text" class="form-control" id="np_naiguang" aria-describedby="advice">
+
+    </div>
+      </div>
+  </div>
+  <button type="button" id="myButton"class="btn btn-default" onclick="get_advice()">开始计算</button>
+  </div>
+  <div class="alert alert-default" role="alert">
+
+  <h4>计算结果</h4>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>职阶</th>
+        <th>推荐指数</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Saber</td>
+        <td id="advice_saber"></td>
+    </tr>
+    <tr>
+        <td>Archer</td>
+        <td id="advice_archer"></td>
+    </tr>
+    <tr>
+        <td>Lancer</td>
+        <td id="advice_lancer"></td>
+    </tr>
+    <tr>
+        <td>Rider</td>
+        <td id="advice_rider"></td>
+    </tr>
+    <tr>
+        <td>Caster</td>
+        <td id="advice_caster"></td>
+    </tr>
+    <tr>
+        <td>Assassin+Extra</td>
+        <td id="advice_assassin"></td>
+    </tr>
+    <tr>
+        <td>Berserker</td>
+        <td id="advice_berserker"></td>
+    </tr>
+    </tbody>
+</table>
+  </div>
+  <p align="center">作者：<a href="https://github.com/kirliavc/test_simulator" target="_blank">Aeca**</a></p>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/fudai.js"></script>
+  </body>
+</html>
